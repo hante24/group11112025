@@ -20,7 +20,3 @@ def is_warm_outside(temp_celsius: float) -> bool:
 print(is_strong_password("Qwerty123"))
 print(has_duplicates([1, 2, 3, 3]))
 print(is_warm_outside(25))
-
-
-
-
