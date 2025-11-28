@@ -2,6 +2,7 @@ import pytest
 from revision.utils import is_valid_email, avg, uah_to_usd
 
 
+
 def test_valid_email():
     assert is_valid_email("user@example.com") is True
 
@@ -16,7 +17,6 @@ def test_no_dot_in_domain():
 
 def test_empty_string():
     assert is_valid_email("") is False
-
 
 
 
@@ -59,5 +59,3 @@ def test_uah_to_usd_large_values():
 def test_uah_to_usd_float_precision():
     result = uah_to_usd(99.99, 36.6)
     assert pytest.approx(result, 0.0001) == 99.99 / 36.6
-
-
