@@ -1,22 +1,36 @@
-def is_strong_password(password: str) -> bool:
-    if len(password) < 8:
+def is_valid_email(value: str) -> bool:
+    if not value:
         return False
 
-    has_digit = any(ch.isdigit() for ch in password)
-    has_upper = any(ch.isupper() for ch in password)
-    has_lower = any(ch.islower() for ch in password)
+    if value.count("@") != 1:
+        return False
 
-    return has_digit and has_upper and has_lower
+    local, domain = value.split("@")
+
+    if not local or not domain:
+        return False
+    if local.startswith(".") or local.endswith("."):
+        return False
+    if domain.startswith(".") or domain.endswith("."):
+        return False
+
+    if "." not in domain:
+        return False
+
+    return True
 
 
-def has_duplicates(your_list: list[int | float | str | bool]) -> bool:
-    return len(your_list) != len(set(your_list))
+def avg(values: list[float]) -> float:
+    if not values:
+        raise ValueError("List is empty")
+
+    return sum(values) / len(values)
 
 
-def is_warm_outside(temp_celsius: float) -> bool:
-    return temp_celsius > 20
+def uah_to_usd(amount: float, rate: float) -> float:
+    if amount <= 0:
+        raise ValueError("Amount must be positive")
+    if rate <= 0:
+        raise ValueError("Rate must be positive")
 
-
-print(is_strong_password("Qwerty123"))
-print(has_duplicates([1, 2, 3, 3]))
-print(is_warm_outside(25))
+    return amount / rate
