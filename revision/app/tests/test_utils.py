@@ -2,6 +2,7 @@ import pytest
 from revision.utils import is_valid_email, avg, uah_to_usd
 
 
+
 def test_valid_email():
     assert is_valid_email("user@example.com") is True
 

@@ -1,9 +1,10 @@
-from revision import utils
-
+from logger import logger
 
 def main():
-    utils.is_number_bigger_than_threshold(5, 8)
+    logger.info("Hello")
+    logger.warning("Hello", extra={"user": 123})
+    logger.error("Hello", extra={"user": 123})
+    logger.critical("Hello", extra={"user": 123})
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
