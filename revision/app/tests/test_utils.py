@@ -20,6 +20,7 @@ def test_uah_to_usd_invalid_rate():
         uah_to_usd(100, 0)
 
 
+
 def test_valid_email():
     assert is_valid_email("user@example.com") is True
 
