@@ -1,4 +1,4 @@
-def uah_to_usd(amount: float, rate: float = 40.0) -> float:
+def uah_to_usd(amount: float, rate: float=40.0) -> float:
     if amount <= 0:
         raise ValueError("Amount must be positive")
     if rate <= 0:
