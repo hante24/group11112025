@@ -1,9 +1,7 @@
 import datetime
-import functools
-
+import time
 
 def timer(func):
-    @functools.wraps(func)
     def wrapper(*args, **kwargs):
         start_time = datetime.datetime.now()
 
@@ -17,3 +15,12 @@ def timer(func):
         return result
 
     return wrapper
+
+@timer
+def example():
+    time.sleep(5)
+    return "Done"
+
+if __name__ == "__main__":
+    result = example()
+    print(result)
